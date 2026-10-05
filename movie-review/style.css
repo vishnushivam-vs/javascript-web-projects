@@ -1,0 +1,158 @@
+body{
+    margin: 0;
+}
+
+.headline{
+    color: #fff;
+    margin-left: 30px;
+
+    
+}
+.topBlock{
+    display: flex;
+    background-color: blue;
+    width: 100%;
+    justify-content: center;
+
+}
+.searchBox{
+    width: 250px;
+    height: 40px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: medium;
+}
+.searchImg{
+    width: 100%;
+}
+.searchButton{
+  width: 40px;
+  height: 42px;
+  margin-top: 20px;
+  margin-left: 5px;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.834);
+}
+.languageBox{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: 5px;
+}
+.languageBtn{
+    width: 120px;
+    height: 30px;
+    margin-left: 5px;
+    border: solid 2px;
+    border-color: rgb(147, 156, 164);
+    border-radius: 20px;
+    background-color: #fff;
+    color: rgb(32, 27, 27);
+    font-size: medium;
+    cursor: pointer;
+    text-align: center;
+}
+.languageBtn.active {
+  background-color: rgb(76, 166, 76);
+  color: white;
+  border: none;
+}
+
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movieDtlsCart{
+    width: 220px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border: solid 1px;
+    border-color: rgb(134, 135, 135);
+    border-radius: 10px;
+}
+.imageBox{
+    width: 200px;
+    height: 300px;
+    margin-left: 10px;
+    margin-top: 3px;
+    
+}
+
+.moviePoster{
+    width: 100%;
+    border-radius: 10px;
+}
+.language{
+    font-weight: bold;
+}
+.movieDtlsBox1{
+ display: flex;
+ width: 200px;
+ height: 50px;
+ margin-left: 4px;
+ justify-content: space-between;
+ align-items: center;
+}
+.movieDtlsBox2{
+    margin-left: 4px;
+}
+.rating{
+ text-align: right;
+}
+.pageChange{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.prevButton{
+    width: 70px;
+    height: 30px;
+    background-color:  rgb(21, 47, 195);
+    border: 0px;
+    border-radius: 10px;
+    color: #fff;
+
+}
+.pageNumber{
+    width: 70px;
+    height: 25px;
+    border: solid 1 px;
+    border-radius: 10px; 
+    margin-left: 4px;
+    text-align: center;
+    font-size: medium;
+    outline: none;
+}
+.nextButton{
+    width: 70px;
+    background-color: rgb(21, 47, 195);
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 4px;
+    color: #fff;
+}
+.goPageButton{
+   
+    height: 28px;
+    margin-left: 4px;
+    background-color: rgb(129, 192, 41);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
