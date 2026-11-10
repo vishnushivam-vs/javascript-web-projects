@@ -188,7 +188,7 @@ function duplicateHorizontalClm(arrays, index) {
             div.style.backgroundColor = "red";
 
         } else {
-            div.style.backgroundColor = " ";
+            div.style.backgroundColor = " #ffffff";
         };
     });
 
@@ -235,7 +235,7 @@ function duplicateVerticalRow(verticalArray, index) {
             div.style.backgroundColor = "red";
 
         } else {
-            div.style.backgroundColor = " ";
+            div.style.backgroundColor = "";
         };
     });
 };
@@ -266,7 +266,7 @@ function duplicateGameColoumn() {
                 });
             } else {
                 valueCounts[key].elements.forEach(element => {
-                    element.style.backgroundColor = '';
+                    element.style.backgroundColor = " #ffffff";
                 });
             };
         };
@@ -326,7 +326,7 @@ export function gameloding() {
 newGameBtn.addEventListener("click", () => {
     numbers = "";
     gameEnd.isPaused = false;
-    timeElement.style.color = 'white';
+    timeElement.style.color = "";
 
 });
 

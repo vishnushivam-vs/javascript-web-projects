@@ -193,3 +193,184 @@ body {
     margin-top: 6px;
     font-size: 15px;
 }
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 600px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .headDiv {
+        height: 40px;
+    }
+
+    .headname {
+        font-size: 25px;
+    }
+
+    .lifeloosediv {
+        margin-top: 5px;
+    }
+
+    .game-container {
+        width: 365px;
+        max-width: 96vw;
+        height: auto;
+        aspect-ratio: 365 / 370;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .mainColoumn {
+        grid-template-columns: repeat(3, 1fr);
+        width: calc(33.33% - 2px);
+        height: auto;
+        aspect-ratio: 108 / 115;
+        margin: 1px 0 0 1px;
+        box-sizing: border-box;
+    }
+
+    .coloumn {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        aspect-ratio: 1 / 1;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .dwn-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 5px;
+        margin-top: 8px;
+    }
+
+    .numbers {
+        width: 34px;
+        height: 34px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+    .selectNumBox {
+        width: 45px;
+        height: 34px;
+        margin-left: 2px;
+        box-sizing: border-box;
+    }
+
+    .mesageBox {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 0 5px;
+    }
+
+    .mesage {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .gameOwerMsg {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .timer_box {
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .timer {
+        font-size: 18px;
+    }
+
+    #pauseButton {
+        height: 30px;
+        padding: 0 12px;
+    }
+
+    .dfcBox {
+        width: 85px;
+        height: 30px;
+        box-sizing: border-box;
+    }
+
+    .difficulty {
+        font-size: 16px;
+    }
+
+    #difficulty_level {
+        width: 75px;
+        height: 33px;
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    .solveBtn {
+        width: 65px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .newGame {
+        height: 30px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+/* Tablet Responsive Design */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .headDiv {
+        height: 45px;
+    }
+
+    .headname {
+        font-size: 29px;
+    }
+
+    .game-container {
+        width: 365px;
+        height: 370px;
+    }
+
+    .mainColoumn {
+        grid-template-columns: repeat(3, 36px);
+        height: 115px;
+    }
+
+    .coloumn {
+        height: 34px;
+    }
+
+    .dwn-container {
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .numbers {
+        width: 38px;
+        height: 36px;
+    }
+
+    .selectNumBox {
+        width: 50px;
+        height: 36px;
+    }
+
+    .mesageBox {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .timer_box {
+        justify-content: center;
+    }
+}

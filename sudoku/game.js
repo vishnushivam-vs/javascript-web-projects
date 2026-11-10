@@ -113,10 +113,11 @@ async function loadSudokuBoard(selectedGameLevel) {
     blockDivs.forEach((cell, index) => {
       let cellValue = solveFlatdata[index];
       cell.innerText = cellValue === 0 ? "" : cellValue;
-      cell.style.backgroundColor = "#002D62";
-      cell.style.color = "white";
-      stopeTimer();
+      //cell.style.backgroundColor = "#002D62";
+      cell.style.color = " #263c65;";
+     
     });
+     stopeTimer();
   });
 
   let winTarget = [];
@@ -178,7 +179,7 @@ select.addEventListener("change", function () {
   mesag.innerHTML = "";
   updateHearts();
   columns.forEach(cell => {
-    cell.style.backgroundColor = "#002D62";
+    cell.style.backgroundColor = "";
   });
 });
 
@@ -194,7 +195,7 @@ newGame.addEventListener("click", () => {
   mesag.innerHTML = "";
   gameOwerMsg.innerHTML = "";
   columns.forEach(cell => {
-    cell.style.backgroundColor = "#002D62";
+    cell.style.backgroundColor = "";
   });
 });
 

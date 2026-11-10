@@ -114,3 +114,159 @@ body{
 .overview{
     margin-left: 30px;
 }
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .movieposterBox {
+        width: 100%;
+        height: 350px;
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+    }
+
+    .nameBox {
+        width: calc(100% - 20px);
+        margin: 35px 10px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .movieName {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .posterBox {
+        width: calc(100% - 40px);
+        max-width: 400px;
+        height: 200px;
+        margin: 15px 10px 0;
+        box-sizing: border-box;
+    }
+
+    .backdropPoster {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .downsection {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .boxDwnSection1 {
+        width: calc(100% - 20px);
+        margin: 5px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px 10px;
+        font-size: 14px;
+    }
+
+    .coloumns {
+        text-align: center;
+    }
+
+    .movieRatingBox {
+        width: 200px;
+        height: 40px;
+        margin: 5px auto 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .overviewBox {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin-top: 10px;
+    }
+
+    .textBox {
+        width: 100%;
+        padding: 5px 10px 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .storyline {
+        margin-left: 5px;
+        font-size: 19px;
+    }
+
+    .overview {
+        margin-left: 10px;
+        margin-right: 10px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+}
+
+/* Tablet Responsive Design */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .movieposterBox {
+        height: 430px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .nameBox {
+        width: 450px;
+        margin-top: 65px;
+        margin-left: 20px;
+    }
+
+    .movieName {
+        font-size: 30px;
+    }
+
+    .posterBox {
+        width: 350px;
+        height: 200px;
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+
+    .downsection {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boxDwnSection1 {
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+    .movieRatingBox {
+        width: 190px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .overviewBox {
+        padding: 0 20px;
+        margin-top: 10px;
+    }
+
+    .textBox {
+        width: 100%;
+        max-width: 650px;
+        padding: 5px 10px 15px;
+        box-sizing: border-box;
+    }
+
+    .overview {
+        margin-left: 15px;
+        line-height: 1.6;
+    }
+}

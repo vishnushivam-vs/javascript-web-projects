@@ -1,21 +1,23 @@
-body{
+body {
     margin: 0;
 }
 
-.headline{
+.headline {
     color: #fff;
     margin-left: 30px;
 
-    
+
 }
-.topBlock{
+
+.topBlock {
     display: flex;
     background-color: blue;
     width: 100%;
     justify-content: center;
 
 }
-.searchBox{
+
+.searchBox {
     width: 250px;
     height: 40px;
     justify-content: center;
@@ -26,32 +28,37 @@ body{
     outline: none;
     font-size: medium;
 }
-.searchImg{
+
+.searchImg {
     width: 100%;
 }
-.searchButton{
-  width: 40px;
-  height: 42px;
-  margin-top: 20px;
-  margin-left: 5px;
-  justify-content: center;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+
+.searchButton {
+    width: 40px;
+    height: 42px;
+    margin-top: 20px;
+    margin-left: 5px;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
-a{
+
+a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.834);
 }
-.languageBox{
-   display: flex; 
-   justify-content: center;
-   align-items: center;
-   margin-left: 10px;
-   margin-right: 10px;
-   margin-top: 5px;
+
+.languageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
 }
-.languageBtn{
+
+.languageBtn {
     width: 120px;
     height: 30px;
     margin-left: 5px;
@@ -64,18 +71,20 @@ a{
     cursor: pointer;
     text-align: center;
 }
+
 .languageBtn.active {
-  background-color: rgb(76, 166, 76);
-  color: white;
-  border: none;
+    background-color: rgb(76, 166, 76);
+    color: white;
+    border: none;
 }
 
-.mainContainer{
+.mainContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.movieDtlsCart{
+
+.movieDtlsCart {
     width: 220px;
     margin-left: 15px;
     margin-top: 10px;
@@ -83,62 +92,71 @@ a{
     border-color: rgb(134, 135, 135);
     border-radius: 10px;
 }
-.imageBox{
+
+.imageBox {
     width: 200px;
     height: 300px;
     margin-left: 10px;
     margin-top: 3px;
-    
+
 }
 
-.moviePoster{
+.moviePoster {
     width: 100%;
     border-radius: 10px;
 }
-.language{
+
+.language {
     font-weight: bold;
 }
-.movieDtlsBox1{
- display: flex;
- width: 200px;
- height: 50px;
- margin-left: 4px;
- justify-content: space-between;
- align-items: center;
+
+.movieDtlsBox1 {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    margin-left: 4px;
+    justify-content: space-between;
+    align-items: center;
 }
-.movieDtlsBox2{
+
+.movieDtlsBox2 {
     margin-left: 4px;
 }
-.rating{
- text-align: right;
+
+.rating {
+    text-align: right;
 }
-.pageChange{
+
+.pageChange {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.prevButton{
+
+.prevButton {
     width: 70px;
     height: 30px;
-    background-color:  rgb(21, 47, 195);
+    background-color: rgb(21, 47, 195);
     border: 0px;
     border-radius: 10px;
     color: #fff;
 
 }
-.pageNumber{
+
+.pageNumber {
     width: 70px;
     height: 25px;
     border: solid 1 px;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin-left: 4px;
     text-align: center;
     font-size: medium;
     outline: none;
 }
-.nextButton{
+
+.nextButton {
     width: 70px;
     background-color: rgb(21, 47, 195);
     height: 30px;
@@ -147,12 +165,184 @@ a{
     margin-left: 4px;
     color: #fff;
 }
-.goPageButton{
-   
+
+.goPageButton {
+
     height: 28px;
     margin-left: 4px;
     background-color: rgb(129, 192, 41);
     color: #fff;
     border: none;
     border-radius: 10px;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .topBlock {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .headline {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-size: 25px;
+    }
+
+    .searchBox {
+        width: calc(100% - 85px);
+        max-width: 250px;
+        height: 40px;
+        margin: 0;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .searchButton {
+        width: 40px;
+        height: 42px;
+        margin: 0 0 0 5px;
+    }
+
+    .searchImg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .languageBox {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 7px;
+        margin: 10px 8px;
+    }
+
+    .languageBtn {
+        width: calc(33.33% - 7px);
+        height: 32px;
+        margin: 0;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .mainContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+        gap: 10px;
+        padding: 0 8px;
+    }
+
+    .movieDtlsCart {
+        width: 100%;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
+    .imageBox {
+        width: calc(100% - 12px);
+        height: 220px;
+        margin: 5px 6px 0;
+    }
+
+    .moviePoster {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+    .movieDtlsBox1 {
+        width: calc(100% - 8px);
+        margin-left: 4px;
+        font-size: 14px;
+    }
+
+    .movieTitle {
+        font-size: 15px;
+    }
+
+    .rating {
+        font-size: 13px;
+    }
+
+    .movieDtlsBox2 {
+        font-size: 13px;
+    }
+
+    .pageChange {
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 15px 5px;
+    }
+
+    .prevButton,
+    .nextButton {
+        width: 65px;
+        height: 30px;
+    }
+
+    .pageNumber {
+        width: 60px;
+        margin-left: 0;
+    }
+
+    .goPageButton {
+        height: 28px;
+        margin-left: 0;
+    }
+}
+
+/* Tablet Responsive Design */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .topBlock {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .headline {
+        margin-left: 20px;
+        font-size: 28px;
+    }
+
+    .searchBox {
+        width: 230px;
+    }
+
+    .languageBox {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 10px;
+    }
+
+    .languageBtn {
+        width: 110px;
+        margin: 0;
+    }
+
+    .mainContainer {
+        justify-content: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .movieDtlsCart {
+        width: 220px;
+        margin: 5px 0;
+    }
+
+    .pageChange {
+        margin-top: 15px;
+    }
 }

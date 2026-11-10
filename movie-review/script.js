@@ -28,7 +28,6 @@ async function getMovieData(page) {
     let movie = await fetch(url);
     let data = await movie.json();
     moviedtls = data;
-    console.log("data", data);
     displayContent();
   } catch (error) {
     console.error("Error fetching movie data:", error);
@@ -68,7 +67,7 @@ function displayContent() {
      return;
   }
   mainContainer.innerHTML = ""; // Clear previous content
-  console.log(mainContainer);
+  
 
   movieResults.forEach((result) => {
     mainContainer.innerHTML += `
@@ -94,8 +93,7 @@ function displayContent() {
 
   movieDetails()
   pageNumber.value = currentpage;
-  console.log("Current Page:", moviedtls.page);
-
+ 
 }
 
 
@@ -148,7 +146,7 @@ function pageChange() {
 
     goPage.addEventListener("click", () => {
       currentpage = pageNumber.value;
-      console.log(currentpage);
+      
       getMovieData(currentpage)
       if (currentpage > 500) {
         alert("Maximum allowed page is 500");
