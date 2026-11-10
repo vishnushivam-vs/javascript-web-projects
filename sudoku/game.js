@@ -10,6 +10,7 @@ const selectNum = document.querySelector(".selectedNum");
 const heartEmoji = document.querySelector(".heartemoji");
 const gameOwerMsg = document.querySelector(".gameOwerMsg");
 const mesag = document.querySelector(".mesage");
+const startBtn = document.getElementById("startButton");
 
 let solveFlatdata = "";
 let textValue = "";
@@ -39,6 +40,21 @@ function updateHearts() {
   };
 };
 
+startBtn.addEventListener("click", () => {
+
+  if (compleatGme.gameFinished) {
+    return;
+  }
+
+  gameEnd.isPaused = false;
+
+  setTime();
+
+  gameloding();
+
+  startBtn.disabled = true;
+
+});
 
 async function loadSudokuBoard(selectedGameLevel) {
   const response = await fetch("https://sudoku-api.vercel.app/api/dosuku");// sudoku data get api
@@ -49,13 +65,13 @@ async function loadSudokuBoard(selectedGameLevel) {
   const fetchdata = await response.json();
   data = fetchdata;
 
-  if (compleatGme.gameFinished || gameEnd.isPaused) { // do not call lodusudokuboarder in this condition
+  if (compleatGme.gameFinished /*|| gameEnd.isPaused*/) { // do not call lodusudokuboarder in this condition
     return;
   };
 
-  setTime();
+  //setTime();
   updateHearts();
-  gameloding();
+  // gameloding();
 
   data.newboard.grids[0].difficulty = selectedGameLevel;
 
@@ -115,9 +131,9 @@ async function loadSudokuBoard(selectedGameLevel) {
       cell.innerText = cellValue === 0 ? "" : cellValue;
       //cell.style.backgroundColor = "#002D62";
       cell.style.color = " #263c65;";
-     
+
     });
-     stopeTimer();
+    stopeTimer();
   });
 
   let winTarget = [];
@@ -168,12 +184,14 @@ solveBtn.addEventListener("click", () => {
 
 // change the game difficulty leval
 select.addEventListener("change", function () {
-
+  compleatGme.gameFinished = false;
+   gameEnd.isPaused = true;
+    stopeTimer();
+    startBtn.disabled = false;
   countlife = 5;
   count = [];
   countIndex.clear();
   const selectedGameLevel = this.value;
-  console.log("Changed to difficulty:", selectedGameLevel);
   loadSudokuBoard(selectedGameLevel);
   selectNum.innerHTML = "";
   mesag.innerHTML = "";
@@ -185,6 +203,8 @@ select.addEventListener("change", function () {
 
 newGame.addEventListener("click", () => {
   compleatGme.gameFinished = false;
+  gameEnd.isPaused = true;
+  startBtn.disabled = false;
   countlife = 5;
   count = [];
   countIndex.clear();

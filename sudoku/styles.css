@@ -145,7 +145,21 @@ body {
     font-weight: 700;
     margin: 0;
 }
+#startButton {
+    margin-left: 5px;
+    background-color: green;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
 
+#startButton:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
 #pauseButton {
     padding: 8px 18px;
     background-color: #eaf2ff;

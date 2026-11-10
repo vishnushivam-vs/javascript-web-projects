@@ -36,7 +36,7 @@ let ninthVerticalRow = [];
 let allColoumValues = [];
 
 export const gameEnd = {
-    isPaused: false
+    isPaused: true
 }
 
 let startingMinutes = 15;
@@ -325,7 +325,7 @@ export function gameloding() {
 
 newGameBtn.addEventListener("click", () => {
     numbers = "";
-    gameEnd.isPaused = false;
+    gameEnd.isPaused = true;
     timeElement.style.color = "";
 
 });
