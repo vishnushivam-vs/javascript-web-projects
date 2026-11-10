@@ -65,13 +65,11 @@ async function loadSudokuBoard(selectedGameLevel) {
   const fetchdata = await response.json();
   data = fetchdata;
 
-  if (compleatGme.gameFinished /*|| gameEnd.isPaused*/) { // do not call lodusudokuboarder in this condition
+  if (compleatGme.gameFinished ) { // do not call lodusudokuboarder in this condition
     return;
   };
-
-  //setTime();
+  
   updateHearts();
-  // gameloding();
 
   data.newboard.grids[0].difficulty = selectedGameLevel;
 
@@ -185,9 +183,9 @@ solveBtn.addEventListener("click", () => {
 // change the game difficulty leval
 select.addEventListener("change", function () {
   compleatGme.gameFinished = false;
-   gameEnd.isPaused = true;
-    stopeTimer();
-    startBtn.disabled = false;
+  gameEnd.isPaused = true;
+  stopeTimer();
+  startBtn.disabled = false;
   countlife = 5;
   count = [];
   countIndex.clear();
