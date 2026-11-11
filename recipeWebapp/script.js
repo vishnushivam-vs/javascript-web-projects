@@ -15,14 +15,14 @@ async function fetchData() {
   recipeDtls = data;
   if (recipeDtls.meals === null) {
     mesage.innerHTML = "Sorry, we couldn't find any recipes matching your search";
-    console.log("null");
+    
 
   } else if (searchTerm !== "") {
     mesage.innerHTML = "search results for " + searchTerm;
   } else {
     mesage.innerHTML = "";
   }
-  console.log(data);
+  
   displayMeals();
 }
 fetchData();

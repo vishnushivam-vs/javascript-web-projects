@@ -65,7 +65,7 @@ async function loadSudokuBoard(selectedGameLevel) {
   const fetchdata = await response.json();
   data = fetchdata;
 
-  if (compleatGme.gameFinished ) { // do not call lodusudokuboarder in this condition
+  if (compleatGme.gameFinished) { // do not call lodusudokuboarder in this condition
     return;
   };
 

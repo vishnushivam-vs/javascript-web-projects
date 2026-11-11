@@ -8,29 +8,27 @@ const searchBtn = document.getElementById("search-button");
 
 async function fetchRandomNews() {
     try {
-        const apiurl = `https://gnews.io/api/v4/top-headlines?country=in&lang=en&max=10&token=${apiKey}`;
-        const response = await fetch(apiurl);
-        const data = await response.json()
+        const response = await fetch("/api/news");
 
+        if (!response.ok) {
+            throw new Error(`API Error: ${response.status}`);
+        }
 
-        return data.articles;
+        const data = await response.json();
+
+        return data.articles || [];
+
     } catch (error) {
-        console.error("fetching error random news", error);
+        console.error("Fetching error:", error);
         return [];
     }
-
-};
+}
 
 async function searchNewsdata(query) {
     try {
-        const url = new URL("https://gnews.io/api/v4/search");
-
-        url.searchParams.set("q", query);
-        url.searchParams.set("lang", "en");
-        url.searchParams.set("max", "10");
-        url.searchParams.set("token", apiKey);
-
-        const response = await fetch(url);
+        const response = await fetch(
+            `/api/news?q=${encodeURIComponent(query)}`
+        );
 
         if (!response.ok) {
             throw new Error(`API Error: ${response.status}`);
@@ -45,6 +43,7 @@ async function searchNewsdata(query) {
         return [];
     }
 }
+
 
 searchBtn.addEventListener('click', async () => {
     const searchData = searchInput.value.trim();
