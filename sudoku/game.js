@@ -68,7 +68,7 @@ async function loadSudokuBoard(selectedGameLevel) {
   if (compleatGme.gameFinished ) { // do not call lodusudokuboarder in this condition
     return;
   };
-  
+
   updateHearts();
 
   data.newboard.grids[0].difficulty = selectedGameLevel;
@@ -127,7 +127,6 @@ async function loadSudokuBoard(selectedGameLevel) {
     blockDivs.forEach((cell, index) => {
       let cellValue = solveFlatdata[index];
       cell.innerText = cellValue === 0 ? "" : cellValue;
-      //cell.style.backgroundColor = "#002D62";
       cell.style.color = " #263c65;";
 
     });
