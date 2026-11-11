@@ -1,34 +1,41 @@
 
-const apiKey = 'b6cd7116f19c0d421331b23915bf3b96'
+
 const blogContainer = document.getElementById("blog-container");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
-
+const apiKey = "pub_9c8ee9b900fc40cd87cd0118b6dd928f"
 
 
 async function fetchRandomNews() {
-    try {
-        const response = await fetch("/api/news");
 
+    try {
+        const apiurl = `https://newsdata.io/api/1/latest?apikey=${apiKey}&country=in&language=en`;
+        const response = await fetch(apiurl);
         if (!response.ok) {
             throw new Error(`API Error: ${response.status}`);
         }
-
         const data = await response.json();
+        return data.results || [];
 
-        return data.articles || [];
-
+        return data.articles;
     } catch (error) {
-        console.error("Fetching error:", error);
+        console.error("fetching error random news", error);
         return [];
     }
+
 }
+
 
 async function searchNewsdata(query) {
     try {
-        const response = await fetch(
-            `/api/news?q=${encodeURIComponent(query)}`
-        );
+        const url = new URL("https://newsdata.io/api/1/latest");
+
+        url.searchParams.set("apikey", apiKey);
+        url.searchParams.set("q", query);
+        url.searchParams.set("country", "in");
+        url.searchParams.set("language", "en");
+
+        const response = await fetch(url);
 
         if (!response.ok) {
             throw new Error(`API Error: ${response.status}`);
@@ -36,12 +43,15 @@ async function searchNewsdata(query) {
 
         const data = await response.json();
 
-        return data.articles || [];
+        console.log(data);
+
+        return data.results || []
 
     } catch (error) {
         console.log("Search error:", error);
         return [];
     }
+
 }
 
 
@@ -68,7 +78,7 @@ function displayBlogs(articles) {
         blogcart.classList.add("blog-card");
         const img = document.createElement("img");
         img.classList.add("blog-image");
-        img.src = article.image || "https://via.placeholder.com/300x200?text=No+Image";
+        img.src = article.image_url || "https://via.placeholder.com/300x200?text=No+Image";
         img.alt = article.title || "News image";
         const title = document.createElement("h2");
         const articleTitle = article.title || "No title available";
@@ -108,5 +118,4 @@ function displayBlogs(articles) {
         console.error("error fetching random news", error)
     }
 })();
-
 
